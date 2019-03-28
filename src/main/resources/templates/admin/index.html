@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Content management</title>        
+        <#import "macro.html" as netCommon>
+        <@netCommon.commonHead />
+        <link rel="stylesheet" href="${request.contextPath}/statics/admin/css/login.css"/>        
+    </head>
+    <body>
+        <div class="table">
+            <div class="box">
+                <div class="header">Login</div>
+                <div class="form">
+                    <form name="form1" action="" method="post"  onsubmit="return check()">
+                        <div class="btn">
+                            <input type="text" placeholder="username" size="16" name="username" />
+                        </div>
+                        <div class="btn">
+                            <input type="password" placeholder="password" size="16" name="password" />
+                        </div>
+                        <div class="btn">
+                            <button type="submit" class="confirm" value="Confirm">Confirm</button>
+                            <button type="reset" class="reset" value="Reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        function check(){
+            for(var i=0;i<document.form1.elements.length-1;i++)
+            {
+                if(document.form1.elements[i].value=="")
+                {
+                    alert("The current form cannot have empty entries");
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+    
+</html>
