@@ -1,0 +1,7 @@
+.container{position:relative;}
+.header{background: #3c8dbc;height: 50px;}
+.header a{color:#fff;text-decoration: none;}
+.logo{display: inline-block;height: 50px;line-height: 50px;font-size: 24px;font-weight: bold;width:240px;padding-left:10px;}
+.logout{float: right;display: inline-block;height: 50px;line-height: 50px;padding-right:10px;cursor: pointer;}
+.left{width:250px;border:1px solid #aaa;position:absolute;top:0px;}
+.right{width:100%;border:1px solid #3c8dbc;position:absolute;top:0px;left:250px;min-width:700px;}
