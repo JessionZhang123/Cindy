@@ -5,7 +5,6 @@
  */
 package com.cn.admin.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.cn.admin.service.AdminService;
@@ -26,20 +25,13 @@ public class AdminController {
     private AdminService aService;
     
     @RequestMapping("/index")
-    public String index(HttpSession session)
+    public String index()
     {
-        String login=(String)session.getAttribute("userlogin");
-        if("".equals(login)||login==null)
-        {
-            return "redirect:login";
-        }else{
-            return "admin/manger";  
-        }
-        
+        return "admin/manger";
     }
     
     @RequestMapping("/login")
-    public String login (HttpServletRequest request,HttpSession session)
+    public String login (HttpServletRequest request)
     {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
@@ -49,7 +41,7 @@ public class AdminController {
             boolean result=aService.login(username, password);
             if(result)
             {
-                session.setAttribute("userlogin", username);
+                request.getSession().setAttribute("userlogin", username);
                 return "redirect:index";
             }else{
                 return "admin/login";
