@@ -9,12 +9,15 @@ and open the template in the editor.
         <title>Content management</title>        
         <#import "macro.html" as netCommon>
         <@netCommon.commonHead />
+        <link rel="stylesheet" href="${request.contextPath}/statics/admin/css/manger.css"/>
     </head>
     <body>
         <div class="content">
-            <div class="header">header</div>
-            <div class="left"><@netCommon.commonLeft /></div>
-            <div class="right">right</div>
+            <div ><@netCommon.commonHeader /></div>
+            <div class="container">
+                <div class="left"><@netCommon.commonLeft /></div>
+                <div class="right">right</div>
+            </div>
         </div>
     </body>
 </html>
