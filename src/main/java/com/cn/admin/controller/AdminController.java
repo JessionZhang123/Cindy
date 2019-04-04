@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.cn.admin.service.AdminService;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -47,6 +48,14 @@ public class AdminController {
                 return "admin/login";
             }
         }
+    }
+    
+    @RequestMapping(value="/logout", method=RequestMethod.POST)
+    @ResponseBody
+    public String logout(HttpServletRequest request)
+    {
+       request.getSession().removeAttribute("userlogin");
+       return "success";
     }
     
     
