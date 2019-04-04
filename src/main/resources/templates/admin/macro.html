@@ -1,8 +1,15 @@
 <#macro commonHead>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </#macro>
 
+<#macro commonScript>
+    <script  src="${request.contextPath}/statics/admin/js/jquery.min.js"></script>
+    <script src="${request.contextPath}/statics/admin/js/layer.js"></script>    
+    <script src="${request.contextPath}/statics/admin/js/jquery.validate.min.js"></script>
+    <script src="${request.contextPath}/statics/admin/js/echarts.common.min.js"></script>
+    <script src="${request.contextPath}/statics/admin/js/manger.js"></script>
+</#macro>
 
 <#macro commonHeader>
     <div class="header">
